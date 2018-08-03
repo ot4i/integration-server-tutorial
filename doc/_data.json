@@ -1,0 +1,298 @@
+{
+    "version": "0.6",
+    "pageContent":
+	{
+        "_comments": "JSON object that contains data for page labels, buttons, etc.",
+        "navItems":
+		{
+            "_common":
+      			{
+                "buttonBackToGallery":
+        				{
+                    "name": "Back To Gallery",
+          					"method": "backToGallery()",
+          					"idName": "backToGallery"
+                },
+                "buttonStartTutorial":
+        				{
+                    "name": "Start Tutorial",
+          					"method": "startTutorialFromDetailsScreen()",
+          					"idName": "startTutorial"
+                },
+        				"buttonViewDetails":
+        				{
+                    "name": "View Details",
+          					"method": "viewDetails()",
+          					"idName": "stepsViewDetails"
+                }
+            }
+        }
+    },
+    "tutorial":
+  	{
+        "_common":
+    		{
+            "name": "Getting Started with Standalone Integration Servers",
+            "shortDescription": "Learn the concepts behind the new standaone integration servers and how to implement them.",
+            "durationText": "This tutorial takes approximately",
+            "durationTime": "5 minutes",
+            "_resourceToOpenComment": "The ID of the first resource to open when the user imports the tutorial. Resource IDs are defined in the repo_metadata.json Tutorials listing on ot4i.",
+            "resourceToOpen": "EventRoutingFlow",
+            "helpLink":
+      			{
+                "text": "IBM Knowledge Center",
+                "link": "/com.ibm.etools.msgbroker.helphome.doc/help_home_msgbroker.htm"
+            }
+        },
+        "pageDetails":
+    		{
+            "topicsName": "Tutorial Topics",
+            "_topicListComment": "A short list of product concepts or tasks demonstrated by this tutorial",
+            "topicList":
+      			[
+                {
+                    "title": "Integration Server stuff"
+                },
+                {
+                    "title": "Integration Server stuff"
+                },
+                {
+                    "title": "Integration Server stuff"
+                },
+                {
+                    "title": "Integration Server stuff"
+                }
+            ],
+            "outcomesName": "Learning outcomes",
+            "_outcomesComment": "Integration Server stuff",
+            "outcomeList":
+      			[
+                {
+                    "title": "Integration Server stuff "
+                }
+            ],
+            "summary":
+      			{
+                "overviewName": "OVERVIEW",
+                "_overviewComment": "A short description of what happens in this tutorial, and an optional short explanation of the IIB concepts used in this tutorial if necessary for context. What background knowledge must the user have for this to make sense?",
+                "sections":
+        				[
+                    {
+                        "section": "Integration Server stuff"
+                    },
+                    {
+                        "section": "Integration Server stuff"
+                    },
+                    {
+                        "section": "Integration Server stuff"
+                    }
+                ]
+            },
+			"helpLinks":
+			{
+				"_helpLinksComment": "Helplinks that have a type:web attribute are rendered as web links. Otherwise, links are assumed to be to embedded Help topics in the Knowledge Center.",
+				"title": "Find out more",
+				"details":
+				[
+					{
+						"title": "Knowledge Center link to ",
+						"description": "Developing integration solutions by using applications",
+						"link": "com.ibm.etools.mft.doc/bi12002_.htm",
+						"type": "help"
+					},
+					{
+						"title": "GitHub link to ",
+						"description": "DFDL Schemas",
+						"link": "http://github.com/DFDLSchemas",
+						"type": "web"
+					}
+				]
+			}
+        },
+        "pageSteps":
+    		{
+            "create":
+      			{
+                "overview":
+        				{
+                    "name": "Create",
+                    "heading": "Import projects",
+                    "_createComment": "A description of what will happen when the user clicks Import.",
+                    "sections":
+          					[
+                        {
+                            "section": "When you click Import, 2 entities will be created in your workspace: the <span class='application'>SimpleApp</span> application and the <span class='application'>SimpleBar</span> BAR file."
+                        },
+                  			{
+                  			    "section": "The contents of this tutorial are an example of a basic application. You will be exploring the basics of an application in future tutorials."
+                  			}
+                    ]
+                },
+                "helpLinks":
+        				{
+                    "title": "Find out more",
+                    "details":
+          					[
+                        {
+                            "title": "Knowledge Center link to ",
+                            "description": "Developing integration solutions by using applications",
+                            "link": "com.ibm.etools.mft.doc/bi12002_.htm"
+                        },
+                        {
+                            "title": "Knowledge Center link to ",
+                            "description": "Callable message flows",
+                            "link": "com.ibm.etools.mft.doc/cl23141_.htm"
+                        }
+                    ]
+                },
+                "actions":
+        				{
+                    "title": "Create Actions",
+                    "details":
+          					[
+                        {
+                            "name": "Import",
+                            "method": "importArtifacts()"
+                        }
+                    ]
+                }
+            },
+            "prepare":
+      			{
+                "overview":
+        				{
+                    "name": "Prepare",
+                    "heading": "Prepare an Integration Server",
+                    "_prepareComment": "Creating an IntegrationServer:",
+                    "sections":
+          					[
+                      {
+                        "steps":
+                        {
+                          "type": "ordered",
+                          "details":
+                          [
+                            {
+                                "details": "Assuming you are using a Windows platform, open an App Connect Enterprise Command Console."
+                            },
+                            {
+                                "details": "Start an integration server by entering the following command into the ACE Command Console: <span class='code'>IntegrationServer --work-dir C:\\MyServer --name MyServer --admin-rest-api 7600 --http-port-number 7800 --console-log</span>"
+                            },
+                            {
+                                "details": "Wait a few moments for the server to boot up on the command line, it should display: Integration server has finished initialization. The HTTP Listener has started listening on port '7600' for 'http' connections."
+                            },
+                            {
+                                "details": "Well done, you've just created a standalone Integration Server hosted locally on your own machine! Move onto the 'Run' tab to see a few things you can do with it."
+                            }
+                          ]
+                        }
+
+                      }
+                    ]
+                },
+                "helpLinks":
+        				{
+                    "title": "Find out more",
+                    "details":
+          					[
+                        {
+                            "title": "Knowledge Center link to ",
+                            "description": "Accessing the Web User Interface",
+                            "link": "com.ibm.etools.mft.doc/bn28450_.htm"
+                        },
+                        {
+                            "title": "Knowledge Center link to ",
+                            "description": "Developing callable message flows",
+                            "link": "com.ibm.etools.mft.doc/cl23143_.htm"
+                        }
+                    ]
+                },
+                "actions":
+        				{
+                    "title": "Prepare Actions",
+                    "details":
+          					[
+                        {
+                            "name": "Deploy",
+                            "method": "deployArtifacts()"
+                        }
+                    ]
+                }
+            },
+            "run":
+      			{
+                "overview":
+        				{
+                    "name": "Run",
+                    "heading": "Follow these steps to complete the tutorial",
+                    "_runComment": "The full steps for the user to run through the tutorial. Use 'sections' to render paragraphs, 'steps' with a type of 'ordered' or 'unordered' to render HTML lists, and 'substeps' to render nested lists.",
+                    "sections":
+          					[
+                        {
+                            "section": "Follow the following steps to complete the tutorial.",
+                            "steps":
+              							{
+                                "type": "ordered",
+                                "details":
+                								[
+                                    {
+                                        "details": "Return your focus back to the ACE Toolkit, more specifically the Integration Explorer tab. This is located directly below the Application Development tab on the left."
+                                    },
+                                    {
+                                        "details": "Right click on the 'Integration Servers' label and select 'Connect to an Integration Server'"
+                                    },
+                                    {
+                                        "details": "Enter the Host Name as 'localhost' and the port as '7600'. If you were to look back at the Prepare tab in this tutorial, you should notice that this is the port assigned to '--admin-rest-api' when starting the server."
+                        				    },
+                        				    {
+                                        "details": "After clicking 'Finish' your server labelled 'MyServer' should appear with a green arrow in the thumbnail. That Green Arrow means the server is currently running, if it were a Red Cross it would signify that the server is not running. If your server doesn't appear straight away, right-click and select 'Refresh'."
+                        				    },
+                        				    {
+                                        "details": "Now to deploy our basic application the the server using the toolkit. Locate the 'SimpleBar.bar' file in the Application Development tab, then drag and drop it onto your new server. If done correctly, the SimpleApp application should appear below the server."
+                        				    },
+                        				    {
+                                        "details": "In order to remove resources from an Integration Server, right-click it and select 'Delete' and confirm."
+                          					}
+                                ]
+                            }
+                        }
+                    ]
+                },
+                "helpLinks":
+        				{
+                    "title": "Find out more",
+                    "details":
+          					[
+                        {
+                            "title": "Knowledge Center link to ",
+                            "description": "Developing callable message flows",
+                            "link": "com.ibm.etools.mft.doc/cl23143_.htm"
+                        },
+                        {
+                            "title": "Knowledge Center link to ",
+                            "description": "Preparing the environment for callable flows",
+                            "link": "com.ibm.etools.mft.doc/cl23148_.htm"
+                        },
+                        {
+                            "title": "Knowledge Center link to ",
+                            "description": "Testing your message flow by using the Flow exerciser",
+                            "link": "com.ibm.etools.mft.doc/rt26110_.htm"
+                        }
+                    ]
+                },
+				"exits":
+				{
+					"title": "Run Exits",
+					"details":
+					[
+						{
+							"name": "Clean Up",
+							"description": "Clean up and remove any changes in your workspace made by the tutorial.",
+							"method": "cleanUp()"
+						}
+					]
+				}
+            }
+        }
+    }
+}
