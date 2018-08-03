@@ -24,13 +24,13 @@
 		
 		<title>IBM Integration Bus V10 Tutorial</title>
 
-    	<link rel="stylesheet" href="http://ot4i.github.io/iib-tutorials/css/main.css" />
-		<link rel="stylesheet" href="http://ot4i.github.io/iib-tutorials/css/app.css" />
+    	<link rel="stylesheet" href="https://ot4i.github.io/iib-tutorials/css/main.css" />
+		<link rel="stylesheet" href="https://ot4i.github.io/iib-tutorials/css/app.css" />
     	
-		<script src="http://ot4i.github.io/iib-tutorials/js/json2.js"></script>
-		<script src="http://ot4i.github.io/iib-tutorials/js/js2java.js"></script>
-		<script src="http://ot4i.github.io/iib-tutorials/js/js2java_steps.js"></script>
-		<script src="http://ot4i.github.io/iib-tutorials/js/vendor/modernizr.js"></script>
+		<script src="https://ot4i.github.io/iib-tutorials/js/json2.js"></script>
+		<script src="https://ot4i.github.io/iib-tutorials/js/js2java.js"></script>
+		<script src="https://ot4i.github.io/iib-tutorials/js/js2java_steps.js"></script>
+		<script src="https://ot4i.github.io/iib-tutorials/js/vendor/modernizr.js"></script>
 	</head>
 <!-- header::End -->
 <!-- body::Start -->
@@ -43,7 +43,7 @@
   </div>
   <div class="row">
     <div class="small-9 medium-9 large-9 columns">
-      <h4>Getting Started with Standalone Integration Servers</h4>
+      <h4>Getting started with ACEv11 - Creating an Integration Server</h4>
     </div>
     <div class="small-3 medium-3 large-3 columns"> 
       <!--a href="javascript:;" onclick="openHelpSystem('/com.ibm.etools.msgbroker.helphome.doc/help_home_msgbroker.htm');" class="small right helplink">IBM Knowledge Center</a-->
@@ -52,7 +52,7 @@
   <hr>
   <div class="row">
     <div class="small-12 medium-12 large-12 columns">
-      <h5> Learn the concepts behind the new standaone integration servers and how to implement them. </h5>
+      <h5> Learn some basics about Integration Servers and how to use them </h5>
     </div>
   </div>
   <div class="row content-details">
@@ -63,32 +63,17 @@
       <div class="row">
       
         
-        <p> Integration Server stuff </p>
+        <p> An Integration Server is used to provide an isolated runtime environment for a set of deployed message flows and resources. Each integration server runs as a unique operating system process in a separate address space. Previous versions of this software product (IBM Integration Bus v10, IBM Integration Bus v9, WebSphere Message Broker v8 etc.) have also included integration servers, but App Connect Enterprise v11 is the first version to allow Integration Server processes to be entirely stand-alone, and defined independently from an integration node. An integration node provides a higher level operating system process, as part of a wider process hierarchy, which is designed to look after the integration servers which are associated with the integration node.  In the past integration nodes have also taken on other responsibilities such as executing new deployments, configuring updates to the server processes and serving the product&#39;s administrative REST API. </p>
       
-        <p> Integration Server stuff </p>
+        <p> If you are planning to run the ACE software directly on a physical machine or within a virtual machine image, then you are advised to define Integration Servers under an Integration Node. </p>
       
-        <p> Integration Server stuff </p>
+        <p> If you are planning to run the ACE software in conjunction with a container framework such as Kubernetes or IBM Cloud Private, then it is the responsibility of this framework to ensure that the servers remain running (or are restarted appropriately) so in this situation using independent integration servers would be the better choice. </p>
+      
+        <p> Independent Integration Servers can also be very useful to quickly get up and running with ACE software, especially if you are working in a development phase of your project or trying out the product for the first time. This tutorial will demonstrate how to create an Integration Server under an Integration Node and as an independent process. </p>
       
       </div>	  
 		<!-- help links do not work in details page for GA 
-        
-		<div class="row content-details">
-			<h4>Find out more</h4>
-			<ul>
-			
-				
-												
-				<li> <a href="javascript:;" onclick="openHelpSystem('/com.ibm.etools.mft.doc/bi12002_.htm');" title="Knowledge Center link to Developing integration solutions by using applications">Developing integration solutions by using applications</a> </li>
-			   	
-			
-				
-				
-				<li> <a href="javascript:;" onclick="openExternalBrowser('http://github.com/DFDLSchemas')" title="GitHub link to  DFDL Schemas">DFDL Schemas</a> </li>
-					
-			
-			</ul>
-		</div>
-				  
+        		  
         -->
         
     </div><!-- End Columns -->
@@ -97,7 +82,7 @@
         <div class="panel radius" style="margin:0px; margin-bottom:10px; padding:5px">
           <div class="row">
             <div class="small-2 medium-2 large-2 columns">
-              <img class="icon-image" src="http://ot4i.github.io/iib-tutorials/images/icons/ibmdesign/clock-time_128.png">
+              <img class="icon-image" src="https://ot4i.github.io/iib-tutorials/images/icons/ibmdesign/clock-time_128.png">
             </div>
             <div class="small-10 large-10 columns">
               This tutorial takes approximately <b>5 minutes</b>.
@@ -141,9 +126,9 @@
       </div>
     </div>
   </div></body>
-		<script src="http://ot4i.github.io/iib-tutorials/js/vendor/jquery.js"></script>
-		<script src="http://ot4i.github.io/iib-tutorials/js/vendor/foundation.min.js"></script>
-		<script src="http://ot4i.github.io/iib-tutorials/js/main.js"></script>
+		<script src="https://ot4i.github.io/iib-tutorials/js/vendor/jquery.js"></script>
+		<script src="https://ot4i.github.io/iib-tutorials/js/vendor/foundation.min.js"></script>
+		<script src="https://ot4i.github.io/iib-tutorials/js/main.js"></script>
 	</body>
 <!-- body::End -->
 

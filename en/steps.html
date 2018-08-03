@@ -24,13 +24,13 @@
 		
 		<title>IBM Integration Bus V10 Tutorial</title>
 
-    	<link rel="stylesheet" href="http://ot4i.github.io/iib-tutorials/css/main.css" />
-		<link rel="stylesheet" href="http://ot4i.github.io/iib-tutorials/css/app.css" />
+    	<link rel="stylesheet" href="https://ot4i.github.io/iib-tutorials/css/main.css" />
+		<link rel="stylesheet" href="https://ot4i.github.io/iib-tutorials/css/app.css" />
     	
-		<script src="http://ot4i.github.io/iib-tutorials/js/json2.js"></script>
-		<script src="http://ot4i.github.io/iib-tutorials/js/js2java.js"></script>
-		<script src="http://ot4i.github.io/iib-tutorials/js/js2java_steps.js"></script>
-		<script src="http://ot4i.github.io/iib-tutorials/js/vendor/modernizr.js"></script>
+		<script src="https://ot4i.github.io/iib-tutorials/js/json2.js"></script>
+		<script src="https://ot4i.github.io/iib-tutorials/js/js2java.js"></script>
+		<script src="https://ot4i.github.io/iib-tutorials/js/js2java_steps.js"></script>
+		<script src="https://ot4i.github.io/iib-tutorials/js/vendor/modernizr.js"></script>
 	</head>
 <!-- header::End -->
 <!-- body::Start -->
@@ -43,7 +43,7 @@
 	</div>
 	<div class="row">
 	  <div class="small-9 medium-9 large-9 columns">
-	    <h4 class="title">Getting Started with Standalone Integration Servers <action><button class="small radius button" tabindex="0" id="stepsViewDetails" onclick="viewDetails()"> View Details</button> </action></h4>
+	    <h4 class="title">Getting started with ACEv11 - Creating an Integration Server <action><button class="small radius button" tabindex="0" id="stepsViewDetails" onclick="viewDetails()"> View Details</button> </action></h4>
 	  </div>
 	  <div class="small-3 medium-3 large-3 columns">
 		<a href="javascript:;" onclick="openHelpSystem('/com.ibm.etools.msgbroker.helphome.doc/help_home_msgbroker.htm')" class="small right helplink">IBM Knowledge Center</a> 
@@ -52,7 +52,7 @@
 	<hr>
 	<div class="row">
 		<div class="small-10 medium-10 large-10 columns">
-		<h5> Learn the concepts behind the new standaone integration servers and how to implement them. </h5>
+		<h5> Learn some basics about Integration Servers and how to use them </h5>
 		</div>
 		<div class="small-2 medium-2 large-2 columns">
 			<button class="small radius button right" tabindex="0" id="backToGallery" onclick="backToGallery()"> Back To Gallery
@@ -82,29 +82,12 @@
 					      	<h4>Import projects</h4>
 					        
 						    
-								<p> When you click Import, 2 entities will be created in your workspace: the <span class="application">SimpleApp</span> application and the <span class="application">SimpleBar</span> BAR file. </p>
+								<p> Click  <span class="uicontrol">Import</span> and the <span class="uicontrol">SimpleApp</span> application will be imported into your workspace. </p>
 								
 							
-								<p> The contents of this tutorial are an example of a basic application. You will be exploring the basics of an application in future tutorials. </p>
+								<p> This simple application contains a message flow which simply receives HTTP data and echoes it back to the requesting client. Once we have created an Integration Server we will deploy this example flow later in the tutorial. </p>
 								
 							
-						</div>
-						
-						<div class="row content-details">
-							<h4>Find out more</h4>
-							<ul>
-							
-								
-																
-								<li> <a href="javascript:;" onclick="openHelpSystem('/com.ibm.etools.mft.doc/bi12002_.htm')" title="Knowledge Center link to Developing integration solutions by using applications">Developing integration solutions by using applications</a> </li>
-							   	
-							
-								
-																
-								<li> <a href="javascript:;" onclick="openHelpSystem('/com.ibm.etools.mft.doc/cl23141_.htm')" title="Knowledge Center link to Callable message flows">Callable message flows</a> </li>
-							   	
-							
-							</ul>
 						</div>
 						
 					</div>
@@ -112,39 +95,59 @@
 					<div class="small-2 medium-2 large-2 columns">
 					
 					
-					<h4 class="tkaction"><a href="javascript:;" onclick="importArtifacts(); openResource('EventRoutingFlow')"> Import <img class="icon-image" src="http://ot4i.github.io/iib-tutorials/images/icons/ibmdesign/back-right-previous_128-orange.png"></a></h4>
+					<h4 class="tkaction"><a href="javascript:;" onclick="importArtifacts(); openResource('SimpleFlow')"> Import <img class="icon-image" src="https://ot4i.github.io/iib-tutorials/images/icons/ibmdesign/back-right-previous_128-orange.png"></a></h4>
 										
 				    </div>
 					
 		    	</div>
 		    	<div class="content" id="panel31">
 					
-		    		<div class="small-10 medium-10 large-10 columns divider">
+					<div class="small-12 medium-12 large-12 columns">
 					
 						<div class="row content-details">
-						  	<h4>Prepare an Integration Server</h4>
+						  	<h4>Prepare your Integration Servers</h4>
 						    
 						    
-								<p>  </p>
+								<p> <b>Create an Integration Server</b> </p>
 								
 								
 									
 									<ol>
 									
 									
-										<li> Assuming you are using a Windows platform, open an App Connect Enterprise Command Console.
+										<li> Assuming you are using a Windows platform, open an App Connect Enterprise Command Console and start an integration server using the following command:<br><code>IntegrationServer --work-dir C:\MyServer --name MyServer --admin-rest-api 7600 --http-port-number 7900 --console-log</code> <br>where <b>C:\MyServer</b> is a folder on your file system that the server will use for its working directory.
 										
 										</li>
 									
-										<li> Start an integration server by entering the following command into the ACE Command Console: <span class="code">IntegrationServer --work-dir C:\MyServer --name MyServer --admin-rest-api 7600 --http-port-number 7800 --console-log</span>
+										<li> After a few seconds the server should report that it has finished initialization and that its HTTP Listener has started listening for connections. Well done, you've just created a standalone Integration Server hosted locally on your own machine!
 										
 										</li>
 									
-										<li> Wait a few moments for the server to boot up on the command line, it should display: Integration server has finished initialization. The HTTP Listener has started listening on port '7600' for 'http' connections.
+									
+									</ol>
+									
+								
+							
+								<p> <b>Create a second Integration Server which is owned by an Integration Node</b> </p>
+								
+								
+									
+									<ol>
+									
+									
+										<li> Open a new App Connect Enterprise Command Console and create an integration node using the following command:<br><code>mqsicreatebroker MyNode</code> <br>
 										
 										</li>
 									
-										<li> Well done, you've just created a standalone Integration Server hosted locally on your own machine! Move onto the 'Run' tab to see a few things you can do with it.
+										<li> Start the Integration Node using the following command:<br><code>mqsistart MyNode</code><br>
+										
+										</li>
+									
+										<li> Create an Integration Server which is owned by the Integration Node using the following command:<br><code>mqsicreateexecutiongroup MyNode -e MyNodeOwnedServer</code><br>
+										
+										</li>
+									
+										<li> Make a note of the administration port which the Integration Node has opened using the <code>mqsilist</code> command.<br>The response should report something like:<br><code>BIP1325I: Integration node 'MyNode' with administration URI 'http://YourHostName:4414' is running.</code><br>
 										
 										</li>
 									
@@ -154,32 +157,8 @@
 								
 							
 						</div>
-						
-						<div class="row content-details">
-							<h4>Find out more</h4>
-							<ul>
-							
-								
-																
-								<li> <a href="javascript:;" onclick="openHelpSystem('/com.ibm.etools.mft.doc/bn28450_.htm')" title="Knowledge Center link to Accessing the Web User Interface">Accessing the Web User Interface</a> </li>
-							   	
-							
-								
-																
-								<li> <a href="javascript:;" onclick="openHelpSystem('/com.ibm.etools.mft.doc/cl23143_.htm')" title="Knowledge Center link to Developing callable message flows">Developing callable message flows</a> </li>
-							   	
-							
-							</ul>
-						</div>
 							
 					</div>
-					
-					<div class="small-2 medium-2 large-2 columns">
-					
-					
-					<h4 class="tkaction"><a href="javascript:;" onclick="deployArtifacts()"> Deploy <img class="icon-image" src="http://ot4i.github.io/iib-tutorials/images/icons/ibmdesign/back-right-previous_128-orange.png"></a></h4>						
-				    					
-				    </div>
 					
 		    	</div>
 		    	<div class="content" id="panel41">
@@ -187,37 +166,29 @@
 		    		<div class="small-10 medium-10 large-10 columns divider">
 					
 				    	<div class="row content-details">
-					      	<h4>Follow these steps to complete the tutorial</h4>
+					      	<h4>Connect your App Connect Enterprise Toolkit to your Integration Servers</h4>
 					        
 						    
-								<p> Follow the following steps to complete the tutorial. </p>
+								<p> <b>Connect to the Integration Server MyServer</b> </p>
 								
 								
 									
 									<ol>
 									
 									
-										<li> Return your focus back to the ACE Toolkit, more specifically the Integration Explorer tab. This is located directly below the Application Development tab on the left.
+										<li> Return to the Integration Explorer view in the ACE Toolkit. By default, this is located directly below the Application Development tab in the bottom left corner.
 										
 										</li>
 									
-										<li> Right click on the 'Integration Servers' label and select 'Connect to an Integration Server'
+										<li> Right click on the <span class="uicontrol">Integration Servers</span> label and select <span class="uicontrol">Connect to an Integration Server</span>
 										
 										</li>
 									
-										<li> Enter the Host Name as 'localhost' and the port as '7600'. If you were to look back at the Prepare tab in this tutorial, you should notice that this is the port assigned to '--admin-rest-api' when starting the server.
+										<li> Enter the <span class="uicontrol">Host Name</span> as <span class="uicontrol">localhost</span> and the <span class="uicontrol">port</span> as <span class="uicontrol">7600</span>. Remember this is the '--admin-rest-api' port which was used when starting the server.  Click <span class="uicontrol">Finish</span>
 										
 										</li>
 									
-										<li> After clicking 'Finish' your server labelled 'MyServer' should appear with a green arrow in the thumbnail. That Green Arrow means the server is currently running, if it were a Red Cross it would signify that the server is not running. If your server doesn't appear straight away, right-click and select 'Refresh'.
-										
-										</li>
-									
-										<li> Now to deploy our basic application the the server using the toolkit. Locate the 'SimpleBar.bar' file in the Application Development tab, then drag and drop it onto your new server. If done correctly, the SimpleApp application should appear below the server.
-										
-										</li>
-									
-										<li> In order to remove resources from an Integration Server, right-click it and select 'Delete' and confirm.
+										<li> Your server labelled <span class="uicontrol">MyServer</span> should appear with a green arrow showing that the server is currently running.
 										
 										</li>
 									
@@ -226,28 +197,50 @@
 									
 								
 							
-						</div>
-						
-						<div class="row content-details"> 	
-							<h4>Find out more</h4>
-							<ul>
-							
+								<p> <b>Connect to the Integration Node MyNode</b> </p>
 								
-																
-								<li> <a href="javascript:;" onclick="openHelpSystem('/com.ibm.etools.mft.doc/cl23143_.htm')" title="Knowledge Center link to Developing callable message flows">Developing callable message flows</a> </li>
-							   	
-							
 								
-																
-								<li> <a href="javascript:;" onclick="openHelpSystem('/com.ibm.etools.mft.doc/cl23148_.htm')" title="Knowledge Center link to Preparing the environment for callable flows">Preparing the environment for callable flows</a> </li>
-							   	
-							
+									
+									<ol>
+									
+									
+										<li> Still in the Integration Explorer view in the ACE Toolkit, right click on the <span class="uicontrol">Integration Nodes</span> label and select <span class="uicontrol">Connect to an Integration Node</span>
+										
+										</li>
+									
+										<li> Enter the <span class="uicontrol">Host Name</span> as <span class="uicontrol">localhost</span> and the <span class="uicontrol">port</span> number which was reported to you using the <span class="uicontrol">mqsilist</span> command which you ran in the Prepare section.
+										
+										</li>
+									
+										<li> Your node labelled <span class="uicontrol">MyNode</span>, and its server labelled <span class="uicontrol">MyNodeOwnedServer</span> should appear with green arrows showing that they are currently running.
+										
+										</li>
+									
+									
+									</ol>
+									
 								
-																
-								<li> <a href="javascript:;" onclick="openHelpSystem('/com.ibm.etools.mft.doc/rt26110_.htm')" title="Knowledge Center link to Testing your message flow by using the Flow exerciser">Testing your message flow by using the Flow exerciser</a> </li>
-							   	
 							
-							</ul>
+								<p> <b>Deploy a simple message flow to your server</b> </p>
+								
+								
+									
+									<ol>
+									
+									
+										<li> Locate the Broker Archive file named <span class="uicontrol">SimpleDeploy.bar</span> inside the Application project which you imported earlier named <span class="uicontrol">SimpleApp</span>, then drag and drop it onto your standalone server named <span class="uicontrol">MyServer</span>.
+										
+										</li>
+									
+										<li> Try testing the message flow SimpleFlow by sending it data using an HTTP client such as cURL: <br><code>curl -X POST http://localhost:7900/Echo -d HelloWorld</code><br>
+										
+										</li>
+									
+									
+									</ol>
+									
+								
+							
 						</div>
 							
 					</div>
@@ -258,7 +251,7 @@
 					
 					
 					
-					<h4 class="tkaction"><a href="javascript:;" onclick="cleanUp()" title="Clean up and remove any changes in your workspace made by the tutorial."> Clean Up <img class="icon-image" src="http://ot4i.github.io/iib-tutorials/images/icons/ibmdesign/close-cancel-error_128-red.png"></a></h4>
+					<h4 class="tkaction"><a href="javascript:;" onclick="cleanUp()" title="Clean up and remove any changes in your workspace made by the tutorial."> Clean Up <img class="icon-image" src="https://ot4i.github.io/iib-tutorials/images/icons/ibmdesign/close-cancel-error_128-red.png"></a></h4>
 				    
 					
 				    </div>
@@ -267,9 +260,9 @@
 			</div> <!-- tab-content -->
 		</div> <!-- columns -->
 	  </div> <!-- row --></body>
-		<script src="http://ot4i.github.io/iib-tutorials/js/vendor/jquery.js"></script>
-		<script src="http://ot4i.github.io/iib-tutorials/js/vendor/foundation.min.js"></script>
-		<script src="http://ot4i.github.io/iib-tutorials/js/main.js"></script>
+		<script src="https://ot4i.github.io/iib-tutorials/js/vendor/jquery.js"></script>
+		<script src="https://ot4i.github.io/iib-tutorials/js/vendor/foundation.min.js"></script>
+		<script src="https://ot4i.github.io/iib-tutorials/js/main.js"></script>
 	</body>
 <!-- body::End -->
 
