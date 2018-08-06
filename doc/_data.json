@@ -51,24 +51,27 @@
             "topicList":
       			[
                 {
-                    "title": "Integration Server stuff"
+                    "title": "Creating a Standalone Integration Server"
                 },
                 {
-                    "title": "Integration Server stuff"
+                    "title": "Creating Integration Servers which are owned by an Integration Node"
                 },
                 {
-                    "title": "Integration Server stuff"
+                    "title": "Connecting to an Integration Server"
                 },
                 {
-                    "title": "Integration Server stuff"
+                    "title": "Deploying to an Integration Server"
                 }
             ],
             "outcomesName": "Learning outcomes",
-            "_outcomesComment": "Integration Server stuff",
+            "_outcomesComment": "Learn how to use Integration Servers effectively in ACE v11",
             "outcomeList":
       			[
                 {
-                    "title": "Integration Server stuff "
+                    "title": "Understand the use of, and concepts behind, ACE Integration Servers in v11"
+                },
+                {
+                    "title": "Understand how to create, connect to and deploy a simple flow to an Integration Server"
                 }
             ],
             "summary":
@@ -103,7 +106,7 @@
                     "_createComment": "A description of what will happen when the user clicks Import.",
                     "sections":
           					[
-                        {							
+                        {
                             "section": "Click  <span class='uicontrol'>Import</span> and the <span class='uicontrol'>SimpleApp</span> application will be imported into your workspace."
                         },
                   			{
@@ -133,7 +136,7 @@
 							"sections":
           					[
                       {
-                       "section":"<b>Create an Integration Server</b>", 
+                       "section":"<b>Create an Integration Server</b>",
 						  "steps":
                         {
                           "type": "ordered",
@@ -146,10 +149,10 @@
                                 "details": "After a few seconds the server should report that it has finished initialization and that its HTTP Listener has started listening for connections. Well done, you've just created a standalone Integration Server hosted locally on your own machine!"
                             }
                           ]
-                        }                      
+                        }
 					  },
 					  {
-                       "section":"<b>Create a second Integration Server which is owned by an Integration Node</b>", 
+                       "section":"<b>Create a second Integration Server which is owned by an Integration Node</b>",
 						  "steps":
                         {
                           "type": "ordered",
@@ -168,9 +171,9 @@
                                 "details": "Make a note of the administration port which the Integration Node has opened using the <code>mqsilist</code> command.<br>The response should report something like:<br><code>BIP1325I: Integration node 'MyNode' with administration URI 'http://YourHostName:4414' is running.</code><br>"
                             }
                           ]
-                        }                      
+                        }
 					  }
-					  
+
 					  ]
                 }
             },
@@ -184,7 +187,7 @@
                     "sections":
           					[
                         {
-                                "section":"<b>Connect to the Integration Server MyServer</b>", 
+                                "section":"<b>Connect to the Integration Server MyServer</b>",
                             "steps":
               							{
                                 "type": "ordered",
@@ -206,12 +209,12 @@
                             }
                         },
 						{
-						        "section":"<b>Connect to the Integration Node MyNode</b>", 
+						        "section":"<b>Connect to the Integration Node MyNode</b>",
                             "steps":
               							{
                                 "type": "ordered",
                                 "details":
-                								[                                    
+                								[
                                     {
                                         "details": "Still in the Integration Explorer view in the ACE Toolkit, right click on the <span class='uicontrol'>Integration Nodes</span> label and select <span class='uicontrol'>Connect to an Integration Node</span>"
                                     },
@@ -225,12 +228,12 @@
                             }
                         },
 						{
-						    "section":"<b>Deploy a simple message flow to your server</b>", 
+						    "section":"<b>Deploy a simple message flow to your server</b>",
                             "steps":
               							{
                                 "type": "ordered",
                                 "details":
-                								[  
+                								[
 										{
                                         "details": "Locate the Broker Archive file named <span class='uicontrol'>SimpleDeploy.bar</span> inside the Application project which you imported earlier named <span class='uicontrol'>SimpleApp</span>, then drag and drop it onto your standalone server named <span class='uicontrol'>MyServer</span>."
                         				    },
@@ -240,7 +243,7 @@
                                 ]
                             }
                         }
-						
+
                     ]
                 },
 				"exits":
