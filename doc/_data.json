@@ -194,7 +194,7 @@
                                 "details":
                 								[
                                     {
-                                        "details": "Return to the Integration Explorer view in the ACE Toolkit. By default, this is located directly below the Application Development tab in the bottom left corner."
+                                        "details": "In the ACE Toolkit, find the Integration Explorer view. By default, this is located directly below the Application Development tab in the bottom left corner."
                                     },
                                     {
                                         "details": "Right click on the <span class='uicontrol'>Integration Servers</span> label and select <span class='uicontrol'>Connect to an Integration Server</span>"
@@ -215,6 +215,9 @@
                                 "type": "ordered",
                                 "details":
                 								[
+									{
+                                        "details": "If you are using App Connect Enterprise v11.0.0.5 or a later fix pack, then local Integration Nodes defined on the same machine as your Toolkit will already be displayed automatically! If the runtime you are using is on a different machine to your Toolkit, or if you are on App Connect Enterprise v11.0.0.4 or earlier then you will need to follow the next three instructions to connect to an integration node."
+									},				
                                     {
                                         "details": "Still in the Integration Explorer view in the ACE Toolkit, right click on the <span class='uicontrol'>Integration Nodes</span> label and select <span class='uicontrol'>Connect to an Integration Node</span>"
                                     },
@@ -245,19 +248,7 @@
                         }
 
                     ]
-                },
-				"exits":
-				{
-					"title": "Run Exits",
-					"details":
-					[
-						{
-							"name": "Clean Up",
-							"description": "Clean up and remove any changes in your workspace made by the tutorial.",
-							"method": "cleanUp()"
-						}
-					]
-				}
+                }
             }
         }
     }
