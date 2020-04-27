@@ -143,10 +143,10 @@
                           "details":
                           [
                             {
-                                "details": "Assuming you are using a Windows platform, open an App Connect Enterprise Command Console and start an integration server using the following command:<br><code>IntegrationServer --work-dir C:\\MyServer --name MyServer --admin-rest-api 7600 --http-port-number 7900 --console-log</code> <br>where <b>C:\\MyServer</b> is a folder on your file system that the server will use for its working directory."
+                                "details": "From the Integration Explorer view in the bottom left corner of the Toolkit, right-click the Integration Servers folder and select the option to <span class='uicontrol'>Create a local integration server</span>. Leave all the options with their default values and click Finish. The local Integration Server will be started, using a project in your Toolkit's workspace as the work directory. Click OK to dismiss the Success dialog. Well done, you've just created a standalone Integration Server hosted locally on your own machine!"
                             },
-                            {
-                                "details": "After a few seconds the server should report that it has finished initialization and that its HTTP Listener has started listening for connections. Well done, you've just created a standalone Integration Server hosted locally on your own machine!"
+							{
+                                "details": "<b>This step is only required if you are using a Toolkit earlier than version 11.0.0.7</b>. If you're using a Toolkit earlier than version 11.0.0.7, then you will not find a menu option to <span class='uicontrol'>Create a local integration server</span>. Instead, you will need to open an App Connect Enterprise Command Console and start an integration server in that console session. This alternate option is also detailed in the <a href='https://www.ibm.com/support/knowledgecenter/en/SSTTDS_11.0.0/com.ibm.etools.mft.doc/bn03995_.html'>Knowledge Center</a>. Open an App Connect Enterprise Command Console and start an integration server using the following command:<br><ul><li>If you are using a Windows platform: <code>IntegrationServer --work-dir C:\\MyServer --name MyServer --admin-rest-api 7600 --http-port-number 7900 --console-log</code> <br>where <b>C:\\MyServer</b> is a folder on your file system that the server will use for its working directory.</li><li>If you are using a UNIX platform: <code>IntegrationServer --work-dir /home/exampleuser/MyServer --name MyServer --admin-rest-api 7600 --http-port-number 7900 --console-log</code> <br>where <b>/home/exampleuser/MyServer</b> is a folder on your file system that the server will use for its working directory.</li></ul> After a few seconds the server should report that it has finished initialization and that its HTTP Listener has started listening for connections. Well done, you've just created a standalone Integration Server hosted locally on your own machine!"
                             }
                           ]
                         }
@@ -193,6 +193,9 @@
                                 "type": "ordered",
                                 "details":
                 								[
+									{
+										"details": "<b>The steps in this section are only needed if you are using a Toolkit earlier than version 11.0.0.7.</b> If you created a local integration server in your Toolkit then it is already displayed to you without you needing to explicitly connect to it."
+									},				
                                     {
                                         "details": "In the ACE Toolkit, find the Integration Explorer view. By default, this is located directly below the Application Development tab in the bottom left corner."
                                     },
@@ -201,10 +204,10 @@
                                     },
                                     {
                                         "details": "Enter the <span class='uicontrol'>Host Name</span> as <span class='uicontrol'>localhost</span> and the <span class='uicontrol'>port</span> as <span class='uicontrol'>7600</span>. Remember this is the '--admin-rest-api' port which was used when starting the server.  Click <span class='uicontrol'>Finish</span>"
-                        				    },
-                        				    {
+                        			},
+                        			{
                                         "details": "Your server labelled <span class='uicontrol'>MyServer</span> should appear with a green arrow showing that the server is currently running."
-                        				    }
+                        			}
                                 ]
                             }
                         },
