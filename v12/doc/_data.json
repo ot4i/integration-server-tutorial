@@ -1,0 +1,246 @@
+{
+    "version": "0.6",
+    "pageContent":
+	{
+        "_comments": "JSON object that contains data for page labels, buttons, etc.",
+        "navItems":
+		{
+            "_common":
+      			{
+                "buttonBackToGallery":
+        				{
+                    "name": "Back To Gallery",
+          					"method": "backToGallery()",
+          					"idName": "backToGallery"
+                },
+                "buttonStartTutorial":
+        				{
+                    "name": "Start Tutorial",
+          					"method": "startTutorialFromDetailsScreen()",
+          					"idName": "startTutorial"
+                },
+        				"buttonViewDetails":
+        				{
+                    "name": "View Details",
+          					"method": "viewDetails()",
+          					"idName": "stepsViewDetails"
+                }
+            }
+        }
+    },
+    "tutorial":
+  	{
+        "_common":
+    		{
+            "name": "Getting started with ACEv12 - Creating an Integration Server",
+            "shortDescription": "Learn some basics about Integration Servers and how to use them",
+            "durationText": "This tutorial takes approximately",
+            "durationTime": "5 minutes",
+            "_resourceToOpenComment": "The ID of the first resource to open when the user imports the tutorial. Resource IDs are defined in the repo_metadata.json Tutorials listing on ot4i.",
+            "resourceToOpen": "SimpleFlow",
+            "helpLink":
+      			{
+                "text": "IBM Knowledge Center",
+           		"link": "https://www.ibm.com/support/knowledgecenter/en/SSTTDS_11.0.0/com.ibm.ace.home.doc/help_home.htm"
+            }
+        },
+        "pageDetails":
+    		{
+            "topicsName": "Tutorial Topics",
+            "_topicListComment": "A short list of product concepts or tasks demonstrated by this tutorial",
+            "topicList":
+      			[
+                {
+                    "title": "Creating a Standalone Integration Server"
+                },
+                {
+                    "title": "Creating Integration Servers which are owned by an Integration Node"
+                },
+                {
+                    "title": "Connecting to an Integration Server"
+                },
+                {
+                    "title": "Deploying to an Integration Server"
+                }
+            ],
+            "outcomesName": "Learning outcomes",
+            "_outcomesComment": "Learn how to use Integration Servers",
+            "outcomeList":
+      			[
+                {
+                    "title": "Understand the use of, and concepts behind, Integration Servers"
+                },
+                {
+                    "title": "Understand how to create, connect to and deploy a simple flow to an Integration Server"
+                }
+            ],
+            "summary":
+      			{
+                "overviewName": "OVERVIEW",
+                "_overviewComment": "A short description of what happens in this tutorial, and an optional short explanation of the IIB concepts used in this tutorial if necessary for context. What background knowledge must the user have for this to make sense?",
+                "sections":
+        				[
+                    {
+                        "section": "An Integration Server provides an isolated runtime environment for a set of deployed message flows and resources. Each integration server runs as a unique operating system process in a separate address space. Previous versions of this software product (IBM App Connect Enterprise v11, IBM Integration Bus v10, IBM Integration Bus v9, WebSphere Message Broker v8 etc.) have had a similar concept.  IBM App Connect Enterprise v11 was the first version to allow Integration Server processes to be entirely stand-alone, and defined independently from an integration node. An integration node provides a higher level operating system process, as part of a wider process hierarchy, which is designed to look after the integration servers which are associated with the integration node.  In the past integration nodes have also taken on other responsibilities such as executing new deployments, configuring updates to the server processes and serving the product's administrative REST API."
+                    },
+                    {
+                        "section": "If you are planning to run the ACE software directly on a physical machine or within a virtual machine image, then you are advised to define Integration Servers under an Integration Node."
+                    },
+                    {
+                        "section": "If you are planning to run the ACE software in conjunction with a container framework such as Kubernetes or OpenShift, then it is the responsibility of this framework to ensure that the servers remain running (or are restarted appropriately) so in this situation using independent integration servers would be the better choice."
+                    },
+                    {
+                        "section": "Independent Integration Servers can also be very useful to quickly get up and running with ACE software, especially if you are working in a development phase of your project or trying out the product for the first time. This tutorial will demonstrate how to create an Integration Server under an Integration Node and as an independent process."
+                    }
+                ]
+            }
+        },
+        "pageSteps":
+    		{
+            "create":
+      			{
+                "overview":
+        				{
+                    "name": "Create",
+                    "heading": "Import projects",
+                    "_createComment": "A description of what will happen when the user clicks Import.",
+                    "sections":
+          					[
+                        {
+                            "section": "Click  <span class='uicontrol'>Import</span> and the <span class='uicontrol'>SimpleApp</span> application will be imported into your workspace."
+                        },
+                  			{
+                  			    "section": "This simple application contains a message flow which simply receives HTTP data and echoes it back to the requesting client. Once we have created an Integration Server we will deploy this example flow later in the tutorial."
+                  			}
+                    ]
+                },
+                "actions":
+        				{
+                    "title": "Create Actions",
+                    "details":
+          					[
+                        {
+                            "name": "Import",
+                            "method": "importArtifacts()"
+                        }
+                    ]
+                }
+            },
+            "prepare":
+      			{
+                "overview":
+        				{
+                    "name": "Prepare",
+                    "heading": "Prepare your Integration Servers",
+                    "_prepareComment": "Creating an IntegrationServer:",
+							"sections":
+          					[
+                      {
+                       "section":"<b>Create an Integration Server</b>",
+						  "steps":
+                        {
+                          "type": "ordered",
+                          "details":
+                          [
+                            {
+                                "details": "From the Integration Explorer view in the bottom left corner of the Toolkit, right-click the Integration Servers folder and select the option to <span class='uicontrol'>Create a local integration server</span>. Leave all the options with their default values and click Finish. The local Integration Server will be started, using a project in your Toolkit's workspace as the work directory. Click OK to dismiss the Success dialog. Well done, you've just created a standalone Integration Server hosted locally on your own machine!"
+                            }							
+                          ]
+                        }
+					  },
+					  {
+                       "section":"<b>Create a second Integration Server which is owned by an Integration Node</b>",
+						  "steps":
+                        {
+                          "type": "ordered",
+                          "details":
+                          [
+                            {
+                                "details": "Open a new App Connect Enterprise Command Console and create an integration node using the following command:<br><code>mqsicreatebroker MyNode</code> <br>"
+                            },
+                            {
+                                "details": "Start the Integration Node using the following command:<br><code>mqsistart MyNode</code><br>"
+                            },
+                            {
+                                "details": "Create an Integration Server which is owned by the Integration Node using the following command:<br><code>mqsicreateexecutiongroup MyNode -e MyNodeOwnedServer</code><br>"
+                            },
+                            {
+                                "details": "Make a note of the administration port which the Integration Node has opened using the <code>mqsilist</code> command.<br>The response should report something like:<br><code>BIP1325I: Integration node 'MyNode' with administration URI 'http://YourHostName:4414' is running.</code><br>"
+                            }
+                          ]
+                        }
+					  }
+
+					  ]
+                }
+            },
+            "run":
+      			{
+                "overview":
+        				{
+                    "name": "Run",
+                    "heading": "Connect your App Connect Enterprise Toolkit to your Integration Servers",
+                    "_runComment": "The full steps for the user to run through the tutorial. Use 'sections' to render paragraphs, 'steps' with a type of 'ordered' or 'unordered' to render HTML lists, and 'substeps' to render nested lists.",
+                    "sections":
+          					[
+                        {
+                                "section":"<b>Connect to the Integration Server MyServer</b>",
+                            "steps":
+              							{
+                                "type": "ordered",
+                                "details":
+                								[
+									{
+										"details": "When using a local Integration Server created in your Toolkit, ike the one you created in this tutorial, then you don't need to do anything further in order to display it in the Toolkit. It is already displayed to you without you needing to explicitly connect to it. In the ACE Toolkit, find the Integration Explorer view, and you should see the server there. By default, this is located directly below the Application Development tab in the bottom left corner."
+                                    },
+                                    {
+                                        "details": "In future, if you ever create an Integration Server outside the Toolkit (either on your local machine, or on another machine) then in order to display it in the ACE Toolkit, you wlil need to right click on the <span class='uicontrol'>Integration Servers</span> label and select <span class='uicontrol'>Connect to an Integration Server</span>. You would then enter the <span class='uicontrol'>Host Name</span> and the <span class='uicontrol'>port</span>. This port is the '--admin-rest-api' port which was used when starting the server. Your server would then appear with a green arrow showing that the server is currently running."
+                        			}
+                                ]
+                            }
+                        },
+						{
+						        "section":"<b>Connect to the Integration Node MyNode</b>",
+                            "steps":
+              							{
+                                "type": "ordered",
+                                "details":
+                								[
+									{
+                                        "details": "Local Integration Nodes defined on the same machine as your Toolkit (like the one we created in this tutorial) will already be displayed in your Toolkit automatically! If the runtime you are using is on a different machine to your Toolkit, or if you are using the previous major version of this product on App Connect Enterprise v11.0.0.4 or earlier then you will need to follow the next three instructions to connect to an integration node."
+									},				
+                                    {
+                                        "details": "Still in the Integration Explorer view in the ACE Toolkit, right click on the <span class='uicontrol'>Integration Nodes</span> label and select <span class='uicontrol'>Connect to an Integration Node</span>"
+                                    },
+                                    {
+                                        "details": "Enter the <span class='uicontrol'>Host Name</span> as <span class='uicontrol'>localhost</span> and the <span class='uicontrol'>port</span> number which was reported to you using the <span class='uicontrol'>mqsilist</span> command which you ran in the Prepare section."
+                        				    },
+                        				    {
+                                        "details": "Your node labelled <span class='uicontrol'>MyNode</span>, and its server labelled <span class='uicontrol'>MyNodeOwnedServer</span> should appear with green arrows showing that they are currently running."
+                        				    }
+                                ]
+                            }
+                        },
+						{
+						    "section":"<b>Deploy a simple message flow to your server</b>",
+                            "steps":
+              							{
+                                "type": "ordered",
+                                "details":
+                								[
+										{
+                                        "details": "Locate the Broker Archive file named <span class='uicontrol'>SimpleDeploy.bar</span> inside the Application project which you imported earlier named <span class='uicontrol'>SimpleApp</span>, then drag and drop it onto your standalone server named <span class='uicontrol'>MyServer</span>."
+                        				    },
+                        				    {
+                                        "details": "Try testing the message flow SimpleFlow by sending it data using an HTTP client such as cURL: <br><code>curl -X POST http://localhost:7800/Echo -d HelloWorld</code><br>"
+                          				}
+                                ]
+                            }
+                        }
+
+                    ]
+                }
+            }
+        }
+    }
+}
