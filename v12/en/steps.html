@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+ 
+	
+<!-- header::Start -->
+	<head>
+		<!-- Use Internet Explorer 9 Standards mode for Eclipse Browser Control - https://www.eclipse.org/swt/faq.php#browsernativeie and https://msdn.microsoft.com/en-us/library/jj676915%28v=vs.85%29.aspx -->
+  		<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+		
+		<!-- Next 2 http=equiv headers required to disable caching the Eclipse Browser Widget -->
+		<meta http-equiv="Pragma" content="no-cache">
+  		<meta http-equiv="Expires" content="-1">
+
+		<meta charset="UTF-8"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<meta name="copyright" content="Copyright IBM Corporation 2014" />
+		<meta name="abstract" content="IBM App Connect Enterprise V11 Tutorial">
+		<meta name="author" content="IBM">
+		<meta name="description" content="IBM App Connect Enterprise V11 Tutorial">
+		<meta name="keywords" content="keywords" > 
+		<meta name="robots" content="index,follow">
+		<meta name="source" content="IBM App Connect Enterprise V11 Tutorial" /> 
+		
+		<title>IBM App Connect Enterprise V11 Tutorial</title>
+
+    	<link rel="stylesheet" href="https://ot4i.github.io/iib-tutorials/css/main.css" />
+		<link rel="stylesheet" href="https://ot4i.github.io/iib-tutorials/css/app.css" />
+    	
+		<script src="https://ot4i.github.io/iib-tutorials/js/json2.js"></script>
+		<script src="https://ot4i.github.io/iib-tutorials/js/js2java.js"></script>
+		<script src="https://ot4i.github.io/iib-tutorials/js/js2java_steps.js"></script>
+		<script src="https://ot4i.github.io/iib-tutorials/js/vendor/modernizr.js"></script>
+	</head>
+<!-- header::End -->
+<!-- body::StartA -->
+		<body>
+  	<!-- body content here -->
+	<div class="row">
+	  <div class="small-12 medium-12 large-12 columns">
+	    <p> </p>
+	  </div>
+	</div>
+	<div class="row">
+	  <div class="small-9 medium-9 large-9 columns">
+	    <h4 class="title">Getting started with ACEv12 - Creating an Integration Server <action><button class="small radius button" tabindex="0" id="stepsViewDetails" onclick="viewDetails()"> View Details</button> </action></h4>
+	  </div>
+	  <div class="small-3 medium-3 large-3 columns">
+		<a href="javascript:;" onclick="openExternalBrowser('https://www.ibm.com/support/knowledgecenter/en/SSTTDS_11.0.0/com.ibm.ace.home.doc/help_home.htm')" class="small right helplink">IBM Knowledge Center</a> 
+	  </div>
+	</div> 
+	<hr>
+	<div class="row">
+		<div class="small-10 medium-10 large-10 columns">
+		<h5> Learn some basics about Integration Servers and how to use them </h5>
+		</div>
+		<div class="small-2 medium-2 large-2 columns">
+			<button class="small radius button right" tabindex="0" id="backToGallery" onclick="backToGallery()"> Back To Gallery
+			</button>
+		</div>
+	</div>
+	<div class="row">          
+		  <div class="small-12 medium-12 large-12 columns">
+			<ul class="tabs vertical"> 
+				<li class="tab-title tab-title-small active">
+				  <a href="javascript:;" onclick="show('panel21')">Create</a> 
+				</li>
+				<li class="tab-title tab-title-small">
+				  <a href="javascript:;" onclick="show('panel31')">Prepare</a> 
+				</li>
+				<li class="tab-title tab-title-small">
+				  <a href="javascript:;" onclick="show('panel41')">Run</a> 
+				</li>
+			</ul>
+			<!-- editing -->
+			<div class="tabs-content panel-thin-blue vertical"> 
+		    	<div class="content active" id="panel21">
+		    		
+		    		<div class="small-10 medium-10 large-10 columns divider">
+					
+				      	<div class="row content-details">
+					      	<h4>Import projects</h4>
+					        
+						    
+								<p> Click  <span class="uicontrol">Import</span> and the <span class="uicontrol">SimpleApp</span> application will be imported into your workspace. </p>
+								
+							
+								<p> This simple application contains a message flow which simply receives HTTP data and echoes it back to the requesting client. Once we have created an Integration Server we will deploy this example flow later in the tutorial. </p>
+								
+							
+						</div>
+						
+					</div>
+					
+					<div class="small-2 medium-2 large-2 columns">
+					
+					
+					<h4 class="tkaction"><a href="javascript:;" onclick="importArtifacts(); openResource('SimpleFlow')"> Import <img class="icon-image" src="https://ot4i.github.io/iib-tutorials/images/icons/ibmdesign/back-right-previous_128-orange.png"></a></h4>
+										
+				    </div>
+					
+		    	</div>
+		    	<div class="content" id="panel31">
+					
+					<div class="small-12 medium-12 large-12 columns">
+					
+						<div class="row content-details">
+						  	<h4>Prepare your Integration Servers</h4>
+						    
+						    
+								<p> <b>Create an Integration Server</b> </p>
+								
+								
+									
+									<ol>
+									
+									
+										<li> From the Integration Explorer view in the bottom left corner of the Toolkit, right-click the Integration Servers folder and select the option to <span class="uicontrol">Create a local integration server</span>. Leave all the options with their default values and click Finish. The local Integration Server will be started, using a project in your Toolkit's workspace as the work directory. Click OK to dismiss the Success dialog. Well done, you've just created a standalone Integration Server hosted locally on your own machine!
+										
+										</li>
+									
+									
+									</ol>
+									
+								
+							
+								<p> <b>Create a second Integration Server which is owned by an Integration Node</b> </p>
+								
+								
+									
+									<ol>
+									
+									
+										<li> Open a new App Connect Enterprise Command Console and create an integration node using the following command:<br><code>mqsicreatebroker MyNode</code> <br>
+										
+										</li>
+									
+										<li> Start the Integration Node using the following command:<br><code>mqsistart MyNode</code><br>
+										
+										</li>
+									
+										<li> Create an Integration Server which is owned by the Integration Node using the following command:<br><code>mqsicreateexecutiongroup MyNode -e MyNodeOwnedServer</code><br>
+										
+										</li>
+									
+										<li> Make a note of the administration port which the Integration Node has opened using the <code>mqsilist</code> command.<br>The response should report something like:<br><code>BIP1325I: Integration node 'MyNode' with administration URI 'http://YourHostName:4414' is running.</code><br>
+										
+										</li>
+									
+									
+									</ol>
+									
+								
+							
+						</div>
+							
+					</div>
+					
+		    	</div>
+		    	<div class="content" id="panel41">
+		    		
+					<div class="small-12 medium-12 large-12 columns">
+					
+				    	<div class="row content-details">
+					      	<h4>Connect your App Connect Enterprise Toolkit to your Integration Servers</h4>
+					        
+						    
+								<p> <b>Connect to the Integration Server MyServer</b> </p>
+								
+								
+									
+									<ol>
+									
+									
+										<li> When using a local Integration Server created in your Toolkit, ike the one you created in this tutorial, then you don't need to do anything further in order to display it in the Toolkit. It is already displayed to you without you needing to explicitly connect to it. In the ACE Toolkit, find the Integration Explorer view, and you should see the server there. By default, this is located directly below the Application Development tab in the bottom left corner.
+										
+										</li>
+									
+										<li> In future, if you ever create an Integration Server outside the Toolkit (either on your local machine, or on another machine) then in order to display it in the ACE Toolkit, you wlil need to right click on the <span class="uicontrol">Integration Servers</span> label and select <span class="uicontrol">Connect to an Integration Server</span>. You would then enter the <span class="uicontrol">Host Name</span> and the <span class="uicontrol">port</span>. This port is the '--admin-rest-api' port which was used when starting the server. Your server would then appear with a green arrow showing that the server is currently running.
+										
+										</li>
+									
+									
+									</ol>
+									
+								
+							
+								<p> <b>Connect to the Integration Node MyNode</b> </p>
+								
+								
+									
+									<ol>
+									
+									
+										<li> Local Integration Nodes defined on the same machine as your Toolkit (like the one we created in this tutorial) will already be displayed in your Toolkit automatically! If the runtime you are using is on a different machine to your Toolkit, or if you are using the previous major version of this product on App Connect Enterprise v11.0.0.4 or earlier then you will need to follow the next three instructions to connect to an integration node.
+										
+										</li>
+									
+										<li> Still in the Integration Explorer view in the ACE Toolkit, right click on the <span class="uicontrol">Integration Nodes</span> label and select <span class="uicontrol">Connect to an Integration Node</span>
+										
+										</li>
+									
+										<li> Enter the <span class="uicontrol">Host Name</span> as <span class="uicontrol">localhost</span> and the <span class="uicontrol">port</span> number which was reported to you using the <span class="uicontrol">mqsilist</span> command which you ran in the Prepare section.
+										
+										</li>
+									
+										<li> Your node labelled <span class="uicontrol">MyNode</span>, and its server labelled <span class="uicontrol">MyNodeOwnedServer</span> should appear with green arrows showing that they are currently running.
+										
+										</li>
+									
+									
+									</ol>
+									
+								
+							
+								<p> <b>Deploy a simple message flow to your server</b> </p>
+								
+								
+									
+									<ol>
+									
+									
+										<li> Locate the Broker Archive file named <span class="uicontrol">SimpleDeploy.bar</span> inside the Application project which you imported earlier named <span class="uicontrol">SimpleApp</span>, then drag and drop it onto your standalone server named <span class="uicontrol">MyServer</span>.
+										
+										</li>
+									
+										<li> Try testing the message flow SimpleFlow by sending it data using an HTTP client such as cURL: <br><code>curl -X POST http://localhost:7800/Echo -d HelloWorld</code><br>
+										
+										</li>
+									
+									
+									</ol>
+									
+								
+							
+						</div>
+							
+					</div>
+					
+				</div>	
+			</div> <!-- tab-content -->
+		</div> <!-- columns -->
+	  </div> <!-- row --></body>
+		<script src="https://ot4i.github.io/iib-tutorials/js/vendor/jquery.js"></script>
+		<script src="https://ot4i.github.io/iib-tutorials/js/vendor/foundation.min.js"></script>
+		<script src="https://ot4i.github.io/iib-tutorials/js/main.js"></script>
+	</body>
+<!-- body::End -->
+
+</html>
