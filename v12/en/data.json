@@ -32,8 +32,8 @@
   	{
         "_common":
     		{
-            "name": "Getting started with ACEv12 - Creating an Integration Server",
-            "shortDescription": "Learn some basics about Integration Servers and how to use them",
+            "name": "Getting started - Creating an Integration Server",
+            "shortDescription": "Learn some basics about integration servers and how to use them",
             "durationText": "This tutorial takes approximately",
             "durationTime": "5 minutes",
             "_resourceToOpenComment": "The ID of the first resource to open when the user imports the tutorial. Resource IDs are defined in the repo_metadata.json Tutorials listing on ot4i.",
