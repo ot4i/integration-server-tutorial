@@ -46,7 +46,7 @@
         },
         "pageDetails":
     		{
-            "topicsName": "Tutorial Topics",
+            "topicsName": "Tutorial topics",
             "_topicListComment": "A short list of product concepts or tasks demonstrated by this tutorial",
             "topicList":
       			[
@@ -76,18 +76,18 @@
             ],
             "summary":
       			{
-                "overviewName": "OVERVIEW",
+                "overviewName": "Overview",
                 "_overviewComment": "A short description of what happens in this tutorial, and an optional short explanation of the IIB concepts used in this tutorial if necessary for context. What background knowledge must the user have for this to make sense?",
                 "sections":
         				[
                     {
-                        "section": "An Integration Server provides an isolated runtime environment for a set of deployed message flows and resources. Each integration server runs as a unique operating system process in a separate address space. Previous versions of this software product (IBM App Connect Enterprise v11, IBM Integration Bus v10, IBM Integration Bus v9, WebSphere Message Broker v8 etc.) have had a similar concept.  IBM App Connect Enterprise v11 was the first version to allow Integration Server processes to be entirely stand-alone, and defined independently from an integration node. An integration node provides a higher level operating system process, as part of a wider process hierarchy, which is designed to look after the integration servers which are associated with the integration node.  In the past integration nodes have also taken on other responsibilities such as executing new deployments, configuring updates to the server processes and serving the product's administrative REST API."
+                        "section": "An Integration Server provides an isolated runtime environment for a set of deployed message flows and resources. Each integration server runs as a unique operating system process in a separate address space. Previous versions of this software product (IBM App Connect Enterprise 11, IBM Integration Bus 10, IBM Integration Bus 9, WebSphere Message Broker 8 etc.) have had a similar concept.  IBM App Connect Enterprise 11 was the first version to allow Integration Server processes to be entirely stand-alone, and defined independently from an integration node. An integration node provides a higher level operating system process, as part of a wider process hierarchy, which is designed to look after the integration servers which are associated with the integration node.  In the past integration nodes have also taken on other responsibilities such as executing new deployments, configuring updates to the server processes and serving the product's administrative REST API."
                     },
                     {
-                        "section": "If you are planning to run the ACE software directly on a physical machine or within a virtual machine image, then you are advised to define Integration Servers under an Integration Node."
+                        "section": "If you are planning to run the IBM App Connect Enterprise software directly on a physical machine or within a virtual machine image, then you are advised to define Integration Servers under an Integration Node."
                     },
                     {
-                        "section": "If you are planning to run the ACE software in conjunction with a container framework such as Kubernetes or OpenShift, then it is the responsibility of this framework to ensure that the servers remain running (or are restarted appropriately) so in this situation using independent integration servers would be the better choice."
+                        "section": "If you are planning to run the IBM App Connect Enterprise software in conjunction with a container framework such as Kubernetes or OpenShift, then it is the responsibility of this framework to ensure that the servers remain running (or are restarted appropriately) so in this situation using independent integration servers would be the better choice."
                     },
                     {
                         "section": "Independent Integration Servers can also be very useful to quickly get up and running with ACE software, especially if you are working in a development phase of your project or trying out the product for the first time. This tutorial will demonstrate how to create an Integration Server under an Integration Node and as an independent process."
