@@ -90,7 +90,7 @@
                         "section": "If you are planning to run the IBM App Connect Enterprise software in conjunction with a container framework such as Kubernetes or OpenShift, then it is the responsibility of this framework to ensure that the servers remain running (or are restarted appropriately) so in this situation using independent integration servers would be the better choice."
                     },
                     {
-                        "section": "Independent Integration Servers can also be very useful to quickly get up and running with ACE software, especially if you are working in a development phase of your project or trying out the product for the first time. This tutorial will demonstrate how to create an Integration Server under an Integration Node and as an independent process."
+                        "section": "Independent Integration Servers can also be very useful to quickly get up and running with the software, especially if you are working in a development phase of your project or trying out the product for the first time. This tutorial will demonstrate how to create an Integration Server under an Integration Node and as an independent process."
                     }
                 ]
             }
@@ -191,10 +191,10 @@
                                 "details":
                 								[
 									{
-										"details": "When using a local Integration Server created in your Toolkit, ike the one you created in this tutorial, then you don't need to do anything further in order to display it in the Toolkit. It is already displayed to you without you needing to explicitly connect to it. In the ACE Toolkit, find the Integration Explorer view, and you should see the server there. By default, this is located directly below the Application Development tab in the bottom left corner."
+										"details": "When using a local Integration Server created in your Toolkit, ike the one you created in this tutorial, then you don't need to do anything further in order to display it in the Toolkit. It is already displayed to you without you needing to explicitly connect to it. In the Toolkit, find the Integration Explorer view, and you should see the server there. By default, this is located directly below the Application Development tab in the bottom left corner."
                                     },
                                     {
-                                        "details": "In future, if you ever create an Integration Server outside the Toolkit (either on your local machine, or on another machine) then in order to display it in the ACE Toolkit, you wlil need to right click on the <span class='uicontrol'>Integration Servers</span> label and select <span class='uicontrol'>Connect to an Integration Server</span>. You would then enter the <span class='uicontrol'>Host Name</span> and the <span class='uicontrol'>port</span>. This port is the '--admin-rest-api' port which was used when starting the server. Your server would then appear with a green arrow showing that the server is currently running."
+                                        "details": "In future, if you ever create an Integration Server outside the Toolkit (either on your local machine, or on another machine) then in order to display it in the Toolkit, you wlil need to right click on the <span class='uicontrol'>Integration Servers</span> label and select <span class='uicontrol'>Connect to an Integration Server</span>. You would then enter the <span class='uicontrol'>Host Name</span> and the <span class='uicontrol'>port</span>. This port is the '--admin-rest-api' port which was used when starting the server. Your server would then appear with a green arrow showing that the server is currently running."
                         			}
                                 ]
                             }
@@ -210,7 +210,7 @@
                                         "details": "Local Integration Nodes defined on the same machine as your Toolkit (like the one we created in this tutorial) will already be displayed in your Toolkit automatically! If the runtime you are using is on a different machine to your Toolkit, or if you are using the previous major version of this product on App Connect Enterprise v11.0.0.4 or earlier then you will need to follow the next three instructions to connect to an integration node."
 									},				
                                     {
-                                        "details": "Still in the Integration Explorer view in the ACE Toolkit, right click on the <span class='uicontrol'>Integration Nodes</span> label and select <span class='uicontrol'>Connect to an Integration Node</span>"
+                                        "details": "Still in the Integration Explorer view in the Toolkit, right click on the <span class='uicontrol'>Integration Nodes</span> label and select <span class='uicontrol'>Connect to an Integration Node</span>"
                                     },
                                     {
                                         "details": "Enter the <span class='uicontrol'>Host Name</span> as <span class='uicontrol'>localhost</span> and the <span class='uicontrol'>port</span> number which was reported to you using the <span class='uicontrol'>mqsilist</span> command which you ran in the Prepare section."
