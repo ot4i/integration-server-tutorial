@@ -184,17 +184,17 @@
                     "sections":
           					[
                         {
-                                "section":"<b>Connect to the Integration Server MyServer</b>",
+                                "section":"<b>Connecting to Integration Servers such as TEST_SERVER</b>",
                             "steps":
               							{
                                 "type": "ordered",
                                 "details":
                 								[
 									{
-										"details": "When using a local Integration Server created in your Toolkit, ike the one you created in this tutorial, then you don't need to do anything further in order to display it in the Toolkit. It is already displayed to you without you needing to explicitly connect to it. In the Toolkit, find the Integration Explorer view, and you should see the server there. By default, this is located directly below the Application Development tab in the bottom left corner."
+										"details": "When using a local Integration Server created in your Toolkit, like the one you created in this tutorial, then you don't need to do anything further in order to display it in the Toolkit. It is already displayed to you without you needing to explicitly connect to it. In the Toolkit, find the Integration Explorer view, and you should see the server named TEST_SERVER already there! By default, this is located directly below the Application Development tab in the bottom left corner."
                                     },
                                     {
-                                        "details": "In future, if you ever create an Integration Server outside the Toolkit (either on your local machine, or on another machine) then in order to display it in the Toolkit, you wlil need to right click on the <span class='uicontrol'>Integration Servers</span> label and select <span class='uicontrol'>Connect to an Integration Server</span>. You would then enter the <span class='uicontrol'>Host Name</span> and the <span class='uicontrol'>port</span>. This port is the '--admin-rest-api' port which was used when starting the server. Your server would then appear with a green arrow showing that the server is currently running."
+                                        "details": "In future, if you ever create an Integration Server outside the Toolkit (either on your local machine, or on another machine) then in order to display it in the Toolkit, you will need to right click on the <span class='uicontrol'>Integration Servers</span> label and select <span class='uicontrol'>Connect to an Integration Server</span>. You would then enter the <span class='uicontrol'>Host Name</span> and the <span class='uicontrol'>port</span>. This port is the '--admin-rest-api' port which was used when starting the server. Your server would then appear with a green arrow showing that the server is currently running."
                         			}
                                 ]
                             }
@@ -229,7 +229,7 @@
                                 "details":
                 								[
 										{
-                                        "details": "Locate the Broker Archive file named <span class='uicontrol'>SimpleDeploy.bar</span> inside the Application project which you imported earlier named <span class='uicontrol'>SimpleApp</span>, then drag and drop it onto your standalone server named <span class='uicontrol'>MyServer</span>."
+                                        "details": "Locate the Broker Archive file named <span class='uicontrol'>SimpleDeploy.bar</span> inside the Application project which you imported earlier named <span class='uicontrol'>SimpleApp</span>, then drag and drop it onto your standalone server named <span class='uicontrol'>TEST_SERVER</span>."
                         				    },
                         				    {
                                         "details": "Try testing the message flow SimpleFlow by sending it data using an HTTP client such as cURL: <br><code>curl -X POST http://localhost:7800/Echo -d HelloWorld</code><br>"
